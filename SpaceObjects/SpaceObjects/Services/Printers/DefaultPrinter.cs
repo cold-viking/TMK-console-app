@@ -4,6 +4,8 @@ namespace SpaceObjects.Services.Printers;
 
 public abstract class DefaultPrinter
 {
+    public abstract bool CanPrint(CosmoObject cosmoObject);
+
     public abstract void Print(CosmoObject cosmoObject);
 
     protected void PrintBaseInfo(CosmoObject cosmoObject)

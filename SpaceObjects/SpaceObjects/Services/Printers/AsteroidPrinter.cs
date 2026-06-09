@@ -1,13 +1,21 @@
 ﻿using SpaceObjects.Entities;
-using SpaceObjects.Services.Printers;
 
 namespace SpaceObjects.Services.Printers;
 
 public class AsteroidPrinter : DefaultPrinter
 {
+    public override bool CanPrint(CosmoObject cosmoObject)
+    {
+        return cosmoObject is Asteroid;
+    }
+
     public override void Print(CosmoObject cosmoObject)
     {
-        var asteroid = (Asteroid)cosmoObject;
+        if (cosmoObject is not Asteroid asteroid)
+        {
+            Console.WriteLine("Incorrect object type for AsteroidPrinter.");
+            return;
+        }
 
         Console.WriteLine("ASTEROID");
         PrintBaseInfo(asteroid);

@@ -4,9 +4,18 @@ namespace SpaceObjects.Services.Printers;
 
 public class PlanetPrinter : DefaultPrinter
 {
+    public override bool CanPrint(CosmoObject cosmoObject)
+    {
+        return cosmoObject is Planet;
+    }
+
     public override void Print(CosmoObject cosmoObject)
     {
-        var planet = (Planet)cosmoObject;
+        if (cosmoObject is not Planet planet)
+        {
+            Console.WriteLine("Incorrect object type for PlanetPrinter.");
+            return;
+        }
 
         Console.WriteLine("PLANET");
         PrintBaseInfo(planet);

@@ -4,9 +4,18 @@ namespace SpaceObjects.Services.Printers;
 
 public class StarPrinter : DefaultPrinter
 {
+    public override bool CanPrint(CosmoObject cosmoObject)
+    {
+        return cosmoObject is Star;
+    }
+
     public override void Print(CosmoObject cosmoObject)
     {
-        var star = (Star)cosmoObject;
+        if (cosmoObject is not Star star)
+        {
+            Console.WriteLine("Incorrect object type for StarPrinter.");
+            return;
+        }
 
         Console.WriteLine("STAR");
         PrintBaseInfo(star);

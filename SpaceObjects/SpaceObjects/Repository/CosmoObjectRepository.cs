@@ -1,7 +1,6 @@
 ﻿using SpaceObjects.Entities;
 using SpaceObjects.Services;
 
-
 namespace SpaceObjects.Repository;
 
 public class CosmoObjectRepository
@@ -15,7 +14,7 @@ public class CosmoObjectRepository
         _cosmoObjects = Reader.Load<List<CosmoObject>>(fileName);
     }
     
-    private CosmoObject? GetById(Guid id)
+    public CosmoObject? GetById(Guid id)
     {
         return _cosmoObjects
             .FirstOrDefault(cosmoObject => cosmoObject.Id == id);
