@@ -1,22 +1,39 @@
-﻿using SpaceObjects.Services;
+﻿using SpaceObjects.Commands;
 using SpaceObjects.Entities;
+using SpaceObjects.Factories;
+using SpaceObjects.Menus;
+using SpaceObjects.Repository;
 using SpaceObjects.Services;
 using SpaceObjects.Services.Initializers;
-
+using SpaceObjects.Services.Printers;
 
 public class Program
 {
     public static void Main()
     {
+        const string fileName = "cosmoObjects.json";
 
-        string fileName = "cosmoObjects.json";
-
-        DefaultInitializer initializer = new DefaultInitializer();
-
-        List<CosmoObject> defaultObjects = initializer.Create();
+        var initializer = new DefaultInitializer();
+        var defaultObjects = initializer.Create();
 
         FileManager.CreateIfNotExists(fileName, defaultObjects);
 
-        List<CosmoObject> cosmoObjects = Reader.Load<List<CosmoObject>>(fileName);
+        var repository = new CosmoObjectRepository(fileName);
+        var printer = new CosmoObjectPrinter();
+        var factorySelector = new CosmoObjectFactorySelector();
+
+        List<ICommand> commands = new()
+        {
+            new DisplayAll(repository),
+            new DisplayByType(repository, printer, factorySelector),
+            new Create(repository, factorySelector),
+            new Update(repository, printer, factorySelector),
+            new Delete(repository, printer),
+            new InitializeDefaultObjects(repository)
+        };
+
+        var menu = new ConsoleMenu(commands);
+
+        menu.Run();
     }
 }
