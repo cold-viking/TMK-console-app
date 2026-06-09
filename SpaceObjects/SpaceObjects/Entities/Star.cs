@@ -19,17 +19,5 @@ public class Star : CosmoObject
     public double TemperatureInKelvin { get; set; }
 
     public string Color { get; set; }
-
-
-
-    public override string GetInfo()
-    {
-        return $"It is info about STAR\n" +
-               $"Name: {Name}, " +
-               $"Mass in tons: {MassInTons}, " +
-               $"Speed km/s: {SpeedKmPerSecond}, " +
-               $"Age in billion years: {AgeInBillionYears}, " +
-               $"Temperature in Kelvin: {TemperatureInKelvin}, " +
-               $"Color: {Color}";
-    }
+    
 }

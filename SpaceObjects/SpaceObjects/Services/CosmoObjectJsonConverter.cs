@@ -8,15 +8,15 @@ public class CosmoObjectJsonConverter : JsonConverter<CosmoObject>
 {
     public override CosmoObject Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        using JsonDocument document = JsonDocument.ParseValue(ref reader);
-        JsonElement root = document.RootElement;
+        using var document = JsonDocument.ParseValue(ref reader);
+        var root = document.RootElement;
 
-        if (!root.TryGetProperty(nameof(CosmoObject.Type), out JsonElement typeElement))
+        if (!root.TryGetProperty(nameof(CosmoObject.Type), out var typeElement))
         {
             throw new JsonException();
         }
 
-        string? type = typeElement.GetString();
+        var type = typeElement.GetString();
 
         return type switch
         {
@@ -35,7 +35,7 @@ public class CosmoObjectJsonConverter : JsonConverter<CosmoObject>
     
     private static T Deserialize<T>(JsonElement root, JsonSerializerOptions options) where T : CosmoObject
     {
-        T? cosmoObject = root.Deserialize<T>(options);
+        var cosmoObject = root.Deserialize<T>(options);
 
         if (cosmoObject is null)
         {

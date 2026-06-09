@@ -15,7 +15,7 @@ public static class Writer
 
     public static void Save<T>(T objectToWrite, string fileName)
     {
-        string json = JsonSerializer.Serialize(objectToWrite, Options);
+        var json = JsonSerializer.Serialize(objectToWrite, Options);
 
         File.WriteAllText(fileName, json);
     }

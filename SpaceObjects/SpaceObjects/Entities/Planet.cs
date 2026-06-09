@@ -24,18 +24,5 @@ public class Planet : CosmoObject
     public string Atmosphere { get; set; }
 
     public double RadiusInKm { get; set; }
-
-
-
-    public override string GetInfo()
-    {
-        return $"It is info about PLANET\n" +
-               $"Name: {Name}, " +
-               $"Mass in tons: {MassInTons}, " +
-               $"Speed km/s: {SpeedKmPerSecond}, " +
-               $"Age in billion years: {AgeInBillionYears}, " +
-               $"Has life: {HasLife}, " +
-               $"Atmosphere: {Atmosphere}, " +
-               $"Radius in km: {RadiusInKm}";
-    }
+    
 }

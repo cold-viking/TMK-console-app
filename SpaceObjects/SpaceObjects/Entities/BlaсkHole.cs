@@ -19,17 +19,5 @@ public class BlackHole : CosmoObject
     public double EventHorizonRadiusInKm { get; set; }
 
     public double GravityPower { get; set; }
-
-
-
-    public override string GetInfo()
-    {
-        return $"It is info about BLACK HOLE\n" +
-               $"Name: {Name}, " +
-               $"Mass in tons: {MassInTons}, " +
-               $"Speed km/s: {SpeedKmPerSecond}, " +
-               $"Age in billion years: {AgeInBillionYears}, " +
-               $"Event horizon radius in km: {EventHorizonRadiusInKm}, " +
-               $"Gravity power: {GravityPower}";
-    }
+    
 }

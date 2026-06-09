@@ -15,9 +15,9 @@ public static class Reader
 
     public static T Load<T>(string fileName)
     {
-        string jsonFromFile = File.ReadAllText(fileName);
+        var jsonFromFile = File.ReadAllText(fileName);
 
-        T? restoredObject = JsonSerializer.Deserialize<T>(jsonFromFile, Options);
+        var restoredObject = JsonSerializer.Deserialize<T>(jsonFromFile, Options);
 
         if (restoredObject == null)
         {
