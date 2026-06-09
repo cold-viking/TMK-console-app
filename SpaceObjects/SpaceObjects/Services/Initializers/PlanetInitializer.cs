@@ -1,6 +1,7 @@
-﻿using SpaceProj.Entities;
+﻿using SpaceObjects.Services.Initializers;
+using SpaceObjects.Entities;
 
-namespace SpaceProj.Services.Initializers;
+namespace SpaceObjects.Services.Initializers;
 
 public class PlanetInitializer : CosmoObjectInitializer
 {

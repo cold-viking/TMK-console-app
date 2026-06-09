@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace SpaceProj.Services;
+namespace SpaceObjects.Services;
 
 public static class Reader
 {

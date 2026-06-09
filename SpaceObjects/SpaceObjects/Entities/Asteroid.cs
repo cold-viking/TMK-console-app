@@ -1,4 +1,4 @@
-﻿namespace SpaceProj.Entities;
+﻿namespace SpaceObjects.Entities;
 
 public class Asteroid : CosmoObject
 {

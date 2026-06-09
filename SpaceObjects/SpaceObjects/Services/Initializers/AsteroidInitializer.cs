@@ -1,6 +1,6 @@
-﻿using SpaceProj.Entities;
+﻿using SpaceObjects.Entities;
 
-namespace SpaceProj.Services.Initializers;
+namespace SpaceObjects.Services.Initializers;
 
 public class AsteroidInitializer : CosmoObjectInitializer
 {

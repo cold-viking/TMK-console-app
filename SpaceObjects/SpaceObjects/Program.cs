@@ -1,7 +1,7 @@
-﻿using SpaceProj.Services;
-using SpaceProj.Entities;
-using SpaceProj.Services;
-using SpaceProj.Services.Initializers;
+﻿using SpaceObjects.Services;
+using SpaceObjects.Entities;
+using SpaceObjects.Services;
+using SpaceObjects.Services.Initializers;
 
 
 public class Program

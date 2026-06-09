@@ -1,6 +1,6 @@
-﻿using SpaceProj.Entities;
+﻿using SpaceObjects.Entities;
 
-namespace SpaceProj.Services.Printers;
+namespace SpaceObjects.Services.Printers;
 
 public class PlanetPrinter : DefaultPrinter
 {

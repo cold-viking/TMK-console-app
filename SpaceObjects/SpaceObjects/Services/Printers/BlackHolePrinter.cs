@@ -1,12 +1,12 @@
-﻿using SpaceProj.Entities;
+﻿using SpaceObjects.Entities;
 
-namespace SpaceProj.Services.Printers;
+namespace SpaceObjects.Services.Printers;
 
 public class BlackHolePrinter : DefaultPrinter
 {
     public override void Print(CosmoObject cosmoObject)
     {
-        BlackHole blackHole = (BlackHole)cosmoObject;
+        var blackHole = (BlackHole)cosmoObject;
 
         Console.WriteLine("BLACK HOLE");
         PrintBaseInfo(blackHole);

@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using SpaceProj.Entities;
+using SpaceObjects.Entities;
 
-namespace SpaceProj.Services;
+namespace SpaceObjects.Services;
 
 public class CosmoObjectJsonConverter : JsonConverter<CosmoObject>
 {

@@ -1,4 +1,4 @@
-﻿namespace SpaceProj.Services;
+﻿namespace SpaceObjects.Services;
 
 public static class FileManager
 {

@@ -1,6 +1,7 @@
-﻿using SpaceProj.Entities;
+﻿using SpaceObjects.Entities;
+using SpaceObjects.Services.Printers;
 
-namespace SpaceProj.Services.Printers;
+namespace SpaceObjects.Services.Printers;
 
 public class AsteroidPrinter : DefaultPrinter
 {

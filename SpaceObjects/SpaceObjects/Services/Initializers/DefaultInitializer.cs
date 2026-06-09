@@ -1,6 +1,8 @@
-﻿using SpaceProj.Entities;
+﻿using SpaceObjects.Entities;
+using SpaceObjects.Services.Initializers;
+using SpaceObjects.Entities;
 
-namespace SpaceProj.Services.Initializers;
+namespace SpaceObjects.Services.Initializers;
 
 public class DefaultInitializer
 {
