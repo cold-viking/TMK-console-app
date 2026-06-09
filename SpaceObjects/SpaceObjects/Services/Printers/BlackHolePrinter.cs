@@ -13,7 +13,7 @@ public class BlackHolePrinter : DefaultPrinter
     {
         if (cosmoObject is not BlackHole blackHole)
         {
-            Console.WriteLine("Incorrect object type for BlackHolePrinter.");
+            Console.WriteLine("Incorrect object type for BlackHolePrinter");
             return;
         }
 

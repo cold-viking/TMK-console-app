@@ -17,7 +17,7 @@ public class ConsoleMenu
         {
             Console.WriteLine("===== SPACE OBJECTS MENU =====");
 
-            for (int i = 0; i < _commands.Count; i++)
+            for (var i = 0; i < _commands.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. {_commands[i].Name}");
             }
@@ -32,7 +32,7 @@ public class ConsoleMenu
                 break;
             }
 
-            if (!int.TryParse(input, out int commandNumber))
+            if (!int.TryParse(input, out var commandNumber))
             {
                 Console.WriteLine("Incorrect command");
                 Console.WriteLine();

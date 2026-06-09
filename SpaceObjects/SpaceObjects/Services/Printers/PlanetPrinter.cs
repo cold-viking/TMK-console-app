@@ -13,7 +13,7 @@ public class PlanetPrinter : DefaultPrinter
     {
         if (cosmoObject is not Planet planet)
         {
-            Console.WriteLine("Incorrect object type for PlanetPrinter.");
+            Console.WriteLine("Incorrect object type for PlanetPrinter");
             return;
         }
 

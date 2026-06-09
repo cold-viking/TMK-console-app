@@ -43,7 +43,7 @@ public abstract class CosmoObjectFactory
                 return value;
             }
 
-            Console.WriteLine("Incorrect number. Try again.");
+            Console.WriteLine("Incorrect number. Try again");
         }
     }
 

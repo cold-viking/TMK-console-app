@@ -13,7 +13,7 @@ public class StarPrinter : DefaultPrinter
     {
         if (cosmoObject is not Star star)
         {
-            Console.WriteLine("Incorrect object type for StarPrinter.");
+            Console.WriteLine("Incorrect object type for StarPrinter");
             return;
         }
 

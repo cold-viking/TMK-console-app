@@ -31,7 +31,7 @@ public class Delete : ICommand
         _printer.PrintMany(cosmoObjects);
 
         Console.Write("Enter object Id: ");
-        string? input = Console.ReadLine();
+        var input = Console.ReadLine();
 
         if (!Guid.TryParse(input, out var id))
         {
@@ -39,7 +39,7 @@ public class Delete : ICommand
             return;
         }
 
-        bool deleted = _repository.Delete(id);
+        var deleted = _repository.Delete(id);
 
         Console.WriteLine(deleted
             ? "Object was deleted"

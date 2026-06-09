@@ -13,7 +13,7 @@ public class AsteroidPrinter : DefaultPrinter
     {
         if (cosmoObject is not Asteroid asteroid)
         {
-            Console.WriteLine("Incorrect object type for AsteroidPrinter.");
+            Console.WriteLine("Incorrect object type for AsteroidPrinter");
             return;
         }
 
