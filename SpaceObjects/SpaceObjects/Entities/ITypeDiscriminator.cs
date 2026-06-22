@@ -2,5 +2,5 @@
 
 public interface ITypeDiscriminator
 {
-    string Type { get; }
+    string Type { get; set; }
 }

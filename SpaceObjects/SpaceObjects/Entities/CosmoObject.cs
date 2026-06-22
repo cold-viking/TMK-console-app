@@ -26,6 +26,6 @@ public abstract class CosmoObject : ITypeDiscriminator
 
     public double AgeInBillionYears { get; set; }
     
-    public abstract string Type { get; }
+    public abstract string Type { get; set; }
     
 }

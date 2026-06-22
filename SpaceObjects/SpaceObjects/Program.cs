@@ -6,6 +6,8 @@ using SpaceObjects.Repository;
 using SpaceObjects.Services;
 using SpaceObjects.Services.Initializers;
 using SpaceObjects.Services.Printers;
+using Microsoft.EntityFrameworkCore;
+using SpaceObjects.Data;
 
 public class Program
 {
@@ -21,6 +23,28 @@ public class Program
         var repository = new CosmoObjectRepository(fileName);
         var printer = new CosmoObjectPrinter();
         var factorySelector = new CosmoObjectFactorySelector();
+        
+        DotNetEnv.Env.Load(Path.GetFullPath(".env"));
+        Console.WriteLine("HOST=" + Environment.GetEnvironmentVariable("POSTGRES_HOST"));
+        var host = Environment.GetEnvironmentVariable("POSTGRES_HOST");
+        var port = Environment.GetEnvironmentVariable("POSTGRES_PORT");
+        var db_name = Environment.GetEnvironmentVariable("POSTGRES_DB");
+        var user = Environment.GetEnvironmentVariable("POSTGRES_USER");
+        var password = Environment.GetEnvironmentVariable("POSTGRES_PASSWORD");
+
+        var connectionString =
+            $"Host={host};Port={port};Database={db_name};Username={user};Password={password}";
+        var options = new DbContextOptionsBuilder<AppDbContext>()
+            .UseNpgsql(connectionString)
+            .Options;
+
+        var db = new AppDbContext(options);
+        Console.WriteLine(db.Database.CanConnect());
+        Console.WriteLine("HOST=" + host);
+        Console.WriteLine("PORT=" + port);
+        Console.WriteLine("DB=" + db_name);
+        Console.WriteLine("USER=" + user);
+        Console.WriteLine("PASS=" + password);
 
         List<ICommand> commands = new()
         {

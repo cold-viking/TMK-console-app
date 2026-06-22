@@ -15,7 +15,7 @@ public class Star : CosmoObject
         Color = color;
     }
     
-    public override string Type => "star";
+    public override string Type {get; set; } = "star";
     public double TemperatureInKelvin { get; set; }
 
     public string Color { get; set; }
