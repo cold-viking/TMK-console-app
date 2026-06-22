@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="SpaceObjects.Tests/SpaceObjects.Tests.csproj" />
   <Project Path="SpaceObjects/SpaceObjects.csproj" />
 </Solution>

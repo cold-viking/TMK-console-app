@@ -17,7 +17,7 @@ public class Planet : CosmoObject
         RadiusInKm = radiusInKm;
     }
     
-    public override string Type => "planet";
+    public override string Type {get; set; } = "planet";
     
     public bool HasLife { get; set; }
 
