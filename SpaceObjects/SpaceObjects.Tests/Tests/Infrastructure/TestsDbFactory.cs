@@ -7,15 +7,13 @@ public static class TestDbFactory
 {
     public static AppDbContext Create()
     {
-        DotNetEnv.Env.Load();
+        const string host = "localhost";
+        const string port = "5432";
+        const string db = "space_db_test";
+        const string user = "postgres";
+        const string password = "1234";
 
-        var host = Environment.GetEnvironmentVariable("POSTGRES_HOST");
-        var port = Environment.GetEnvironmentVariable("POSTGRES_PORT");
-        var db = "space_db_test";
-        var user = Environment.GetEnvironmentVariable("POSTGRES_USER");
-        var password = Environment.GetEnvironmentVariable("POSTGRES_PASSWORD");
-
-        var connectionString =
+        const string connectionString =
             $"Host={host};Port={port};Database={db};Username={user};Password={password}";
 
         var options = new DbContextOptionsBuilder<AppDbContext>()
@@ -23,7 +21,7 @@ public static class TestDbFactory
             .Options;
 
         var context = new AppDbContext(options);
-        
+
         context.Database.EnsureDeleted();
         context.Database.EnsureCreated();
 

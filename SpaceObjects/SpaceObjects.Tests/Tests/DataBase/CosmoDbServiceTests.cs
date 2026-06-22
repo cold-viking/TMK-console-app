@@ -13,12 +13,19 @@ public class CosmoDbServiceTests
         var db = TestDbFactory.Create();
         var service = new CosmoDbService(db);
 
-        var planet = new Planet("Earth", 1, 1, 1, true, "rock", 1);
+        var planet = new Planet(
+            "TestPlanet",
+            1,
+            1,
+            1,
+            true,
+            "rock",
+            1
+        );
         
         service.Add(planet);
-        
-        var result = service.GetAll();
 
+        var result = service.GetAll();
         Assert.Contains(result, x => x.Name == "TestPlanet");
     }
     
